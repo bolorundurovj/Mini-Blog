@@ -30,7 +30,7 @@ export class PostCreateComponent implements OnInit {
       'content': new FormControl(null, {
         validators: [Validators.required]
       }),
-      image: new FormControl(null, {
+      'image': new FormControl(null, {
         validators: [Validators.required]
       })
     });
