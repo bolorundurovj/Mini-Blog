@@ -27,6 +27,11 @@ export const mimeType = (control: AbstractControl): Promise<{[key: string]: any}
           isValid = false;
           break;
       }
+      if(isValid){
+        observer.next(null);
+      }else{
+        observer.next({invalidMimeType: true});
+      }
     });
     fileReader.readAsArrayBuffer(file);
   });
