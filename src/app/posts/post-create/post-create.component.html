@@ -12,7 +12,7 @@
       <input type="file" #filePicker (change)="onImagePicked($event)">
     </div>
 
-    <div class="image-preview">
+    <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
       <img src="" [alt]="form.value.title">
     </div>
 
