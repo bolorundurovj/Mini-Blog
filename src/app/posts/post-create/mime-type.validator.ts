@@ -32,7 +32,9 @@ export const mimeType = (control: AbstractControl): Promise<{[key: string]: any}
       }else{
         observer.next({invalidMimeType: true});
       }
+      observer.complete();
     });
     fileReader.readAsArrayBuffer(file);
   });
+  return frObs;
 };
