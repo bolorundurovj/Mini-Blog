@@ -13,7 +13,7 @@
     </div>
 
     <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
-      <img src="" [alt]="form.value.title">
+      <img [src]="imagePreview" [alt]="form.value.title">
     </div>
 
     <mat-form-field>
