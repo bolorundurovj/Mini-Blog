@@ -8,5 +8,6 @@ export const mimeType = (control: AbstractControl): Promise<{[key: string]: any}
     fileReader.addEventListener("loadend", () => {
 
     });
+    fileReader.readAsArrayBuffer(file);
   });
 };
