@@ -13,7 +13,12 @@ const MIME_TYPE_MAP = {
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'backend/images');
+    const isValid = MIME_TYPE_MAP[file.mimetype];
+    let error =  new Error("Invalid mime type");
+    if(isValid){
+      error = null;
+    }
+    cb(error, 'backend/images');
   },
   filename: (req, file, cb) => {
     const name = file.originalname.toLocaleLowerCase().split(' ').join('-');
@@ -22,7 +27,7 @@ const storage = multer.diskStorage({
   }
 });
 //Create Posts
-router.post('/', (req, res, next) => {
+router.post('/',multer(storage).single("image"), (req, res, next) => {
   const post = new Post({
     title: req.body.title,
     content: req.body.content
