@@ -20,6 +20,7 @@ export class PostListComponent implements OnInit, OnDestroy{
  posts : Post[] = [];
  isLoading = false;
  private postSub: Subscription;
+ totalPosts =10;
 
   constructor(public postsService : PostsService) { }
 
