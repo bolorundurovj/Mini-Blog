@@ -51,6 +51,8 @@ router.post('/',multer({storage: storage}).single("image"), (req, res, next) => 
 
 //Read all Posts
 router.get('/', (req, res, next) => {
+  const pageSize = req.query.pagesize;
+  const currentPage = req.query.page;
   Post.find()
   .then(documents => {
     res.status(200).json({
