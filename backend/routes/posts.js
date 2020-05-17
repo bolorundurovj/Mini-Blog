@@ -54,11 +54,13 @@ router.post(
 
 //Read all Posts
 router.get("/", (req, res, next) => {
-  const pageSize = req.query.pagesize;
-  const currentPage = req.query.page;
+  const pageSize = +req.query.pagesize;
+  const currentPage = +req.query.page;
   const postQuery = Post.find();
   if (pageSize && currentPage) {
-    postQuery.skip(pageSize * (currentPage - 1));
+    postQuery
+      .skip(pageSize * (currentPage - 1))
+      .limit(pageSize);
   }
   postQuery.then((documents) => {
     res.status(200).json({
