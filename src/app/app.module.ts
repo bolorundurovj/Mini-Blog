@@ -33,6 +33,7 @@ import { SignUpComponent } from './auth/signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
@@ -43,7 +44,6 @@ import { SignUpComponent } from './auth/signup/signup.component';
     MatIconModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
