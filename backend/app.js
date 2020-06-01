@@ -9,7 +9,7 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect("mongodb://bolorundurovb:eberenus93@ds159845.mlab.com:59845/mean-post")
+mongoose.connect("mongodb://bolorundurovb:"+ process.env.MLAB_PW +"@ds159845.mlab.com:59845/mean-post")
 .then(() =>{
   console.log("Connected to database".blue.bgWhite);
 })
