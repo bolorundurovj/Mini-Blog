@@ -14,6 +14,7 @@ mongoose.connect("mongodb://bolorundurovb:"+ process.env.MLAB_PW +"@ds159845.mla
   console.log("Connected to database".blue.bgWhite);
 })
 .catch(() =>{
+  console.log("mongodb://bolorundurovb:"+ process.env.MLAB_PW +"@ds159845.mlab.com:59845/mean-post")
   console.log("Failed to connect to database".red.bgWhite);
 })
 
