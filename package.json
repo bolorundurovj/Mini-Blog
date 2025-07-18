@@ -30,7 +30,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^8.16.0",
     "mongoose-unique-validator": "^4.0.1",
-    "multer": "^2.0.1",
+    "multer": "^2.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
